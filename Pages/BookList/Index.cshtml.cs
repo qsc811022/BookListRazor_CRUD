@@ -7,6 +7,7 @@ using BookListRazor_ted.Model;
 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 
 namespace BookListRazor_ted.Pages.BookList
 {
@@ -19,8 +20,12 @@ namespace BookListRazor_ted.Pages.BookList
             _db=db;
         }
 
-        public void OnGet()
+        public IEnumerable<Book> Books { get;set;}
+
+
+        public async Task OnGet()
         {
+            Books = await _db.Book.ToListAsync();
         }
     }
 }
