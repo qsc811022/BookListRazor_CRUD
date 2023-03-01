@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BookListRazor_ted.Controllers
 {
-    [Route("Api/Book")]
+    [Route("api/book")]
     [ApiController]
     public class BookController : Controller
     {
